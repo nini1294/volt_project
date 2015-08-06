@@ -1,0 +1,22 @@
+<:Title>
+    Messaging
+
+<:Body>
+    <h1>Messaging</h1>
+    <div class="container">
+        <form e-submit="add_message" role="form">
+            <div class="form-group">
+                <label>Todo</label>
+                <input class="form-control text-center" type="text" value="{{ page._new_message }}" />
+            </div>
+        </form>
+        <h2 class="text-center">{{ page._new_message }}</h2>
+        <table>
+            {{ page._messages.each do |message| }}
+                <tr>
+                    <td>{{ message._name }}</td>
+                    <td><button e-click="delete">X</button></td>
+                </tr>
+            {{ end }}
+        </table>
+    </div>

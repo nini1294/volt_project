@@ -9,6 +9,15 @@ module Main
       # Add code for when the about view is loaded
     end
 
+    def add_message
+      page._messages << {name: page._new_message} unless page._new_message.empty?
+      page._new_message = ''
+    end
+
+    def delete
+      page._messages.delete(self)
+    end
+
     private
 
     # The main template contains a #template binding that shows another
